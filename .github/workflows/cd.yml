@@ -23,7 +23,4 @@ jobs:
             docker pull "${{ secrets.DOCKER_IMAGE }}"
             docker stop "${{ secrets.DOCKER_CONTAINER }}" || true
             docker rm "${{ secrets.DOCKER_CONTAINER }}" || true
-            docker run -d \
-              --name "${{ secrets.DOCKER_CONTAINER }}" \
-              -p 80:9000 \
-              "${{ secrets.DOCKER_IMAGE }}"
+            docker run -d  --name "${{ secrets.DOCKER_CONTAINER }}" -p 80:9000 "${{ secrets.DOCKER_IMAGE }}"
